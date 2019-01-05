@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style type="text/css">
+
+	body { margin-top: 5%; margin-right: 10%; margin-left: 10%;
+		background-image: url("4.jpg");
+  	background-size: 100% ;
+  background-attachment:fixed; }
+ </style>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 400px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+h1{font-weight: bold;
+  color: #fff;
+  font-size: 50px;
+
+}
+h2 {
+  font-weight: bold;
+  color: #EBF5FB;
+  font-size: 30px;
+}
+
+h3{ font-size: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1 align="center" font size="7" style="color:black;">Create New Admins !</h1><br><br><br><br>
+
+<div class="row">
+  <div align="center" class="column" style="background-color:#76D7C4;">
+    <h2>Add New User as Admin</h2>
+    <form method="post" action="create.php">
+		<h3>User ID<input type="hidden" name="user" value="newUser" /></h3>
+			<input type="text" name="id"/><br><br>
+            <h3>Password</h3>
+			<input type="password" name="pwd"/><br><br>
+			<input type="submit" value="Create"/>
+		</form>
+
+  </div>
+  <div align="center" class="column" style="background-color:#9B59B6;">
+    <br><br><h2>Back To Admin Page</h2>
+    <br>
+      <div align = "center" class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+        <a href="adminpage.html" class="btn btn-danger"style="font-family:Comic Sans MS;text-decoration : none; width:120px;">Home</a>
+    <br><br>
+
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70Zpx;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+  }
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+h5 {
+    background-color: #80ced6;
+}
+h6 {
+    background-color: #A569BD;
+}
+p.oblique {
+    font-style: oblique;
+}
+.contain {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.top-centere {
+    position: absolute;
+    top: 60px;
+    right: 600px;
+    color: red;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+     margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    position: fixed;
+	right:100px;
+	top:5px;
+
+}
+.help-button{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+    position: fixed;
+	right:100px;
+	top:5px;
+	 margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button4 {
+    background-color: black;
+    color: white;
+    border: 2px solid #f44336;
+}
+
+ .button4:hover {
+    background-color: #f44336;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  text-align: center;
+  width:20%;
+  left:40%;
+
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: Tomato;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    width:20%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.submit-button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.submit-button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Raleway";
+* { box-sizing: border-box; }
+
+.hh1{ margin: 0; }
+#contact {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  margin: 4em auto;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#contact:hover { background: #666; }
+#contact:active { background: #444; }
+
+#contactForm {
+  display: none;
+
+  border: 6px solid salmon;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: Tomato;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+
+}
+
+input, textarea {
+  margin: .8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+
+  display: block;
+  width: 280px;
+  padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+.formBtn {
+  width: 140px;
+  display: inline-block;
+
+  background: teal;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
+
+
+.signup-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signup-button:hover {
+    opacity:1;
+}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+   padding:16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 30%;
+    top: 0%;
+    width: 40%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+.login {
+	top: 10%;
+	height: 80%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+.search-background img {
+    width: 100%;
+}
+.well-searchbox {
+  min-height: 20px;
+  min-width: 400px;
+  padding: 19px;
+  position: absolute;
+  z-index: 80;
+  top: 90px;
+  right: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well-searchbox label {
+    color: #fff;
+}
+
+
+</style>
+</head>
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="index1.html" class="w3-bar-item w3-button w3-hover-purple"style="font-family:Comic Sans MS;text-decoration : none; width:120px;">Home</a>
+    <a onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hover-purple" style="font-family:Comic Sans MS;text-decoration : none;width:150px">Sign Up</a>
+
+
+        <a onclick="document.getElementById('id02').style.display='block'" class="w3-bar-item w3-button w3-hover-purple"style="font-family:Comic Sans MS;text-decoration : none;width:200px">User Login</a>
+        <a onclick="document.getElementById('id03').style.display='block'" class="w3-bar-item w3-button w3-hover-purple"style="font-family:Comic Sans MS;text-decoration : none;width:200px">Admin Login</a>
+        <a onclick="document.getElementById('id04').style.display='block'" class="w3-bar-item w3-button w3-hover-purple"style="font-family:Comic Sans MS;text-decoration : none;width:250px">Update Password</a>
+
+      <a onclick="openForm()" class="w3-bar-item w3-button w3-hover-purple"style="font-family:Comic Sans MS;text-decoration : none;width:120px">Help</a>
+
+
+  </div>
+</div>
+
+  <img src="5.jpg" alt="Snow" width=100% height=100%>
+
+  <div class="top-centere"><font size="60" color ="BLACK" style="font-family:Comic Sans MS;"><b>CHIT-CHAT BOX !</b></font></div>
+
+<img src="1.jpg" alt="HTML5 Icon" width=100% height="100%">
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="login.php" method="post" enctype="multipart/form-data">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="userid-signup"><b>Email ID</b></label>
+      <input type="text" placeholder="Enter UserId" name="email" required>
+
+      <label for="userid-signup"><b>Name</b></label>
+      <input type="text" placeholder="Enter UserId" name="name" required>
+
+      <label for="psw-signup"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <label for="psw-signup"><b>Upload Profile Pic</b></label>
+	  <input type="file" name="photo">
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="signup-button cancelbtn">Cancel</button>
+        <button type="submit" class="signup-button signupbtn" onclick="checker()">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal login">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="login.php" method="post">
+    <div class="container">
+      <h1>Log In</h1>
+      <hr>
+      <label for="userid-login"><b>Email ID</b></label>
+      <input type="text" placeholder="Enter UserId" name="email" required>
+
+      <label for="psw-login"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <input type="hidden" name="admin" value="no">
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="signup-button cancelbtn">Cancel</button>
+        <button type="submit" class="signup-button signupbtn">Log In</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="id03" class="modal login">
+  <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <input type="hidden" name="admin" value="no">
+  <form class="modal-content" action="adminlogin.php" method="post">
+    <div class="container">
+      <h1>Admin Log In</h1>
+      <hr>
+      <label for="userid-admin-login"><b>User Id</b></label>
+      <input type="text" placeholder="Enter Admin UserId" name="user" required>
+
+      <label for="psw-admin-login"><b>Password</b></label>
+      <input type="password" placeholder="Enter Admin Password" name="password" required>
+      <input type="hidden" name="admin" value="yes">
+      <input type="hidden" name="admin" value="yes">
+
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="signup-button cancelbtn">Cancel</button>
+        <button type="submit" class="signup-button signupbtn">Log In</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="id04" class="modal login">
+  <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="userpassword.php" method="post">
+    <div class="container">
+      <h1>Update User Password</h1>
+      <hr>
+      <label for="id"><b>User Email</b></label>
+      <input type="text" placeholder="Enter User Name" name="id" required>
+
+      <label for="old-pass"><b>Old Password</b></label>
+      <input type="password" placeholder="Enter Old Password" name="oldpass" required>
+
+      <label for="new-pass"><b>New Password</b></label>
+      <input type="password" placeholder="Enter New Password" name="passwd" required>
+
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="signup-button cancelbtn">Cancel</button>
+        <button type="submit" class="signup-button signupbtn">Update Password</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 0; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+
+
+<div class="jumbotron text-center" style="background-color:#D0D3D4;">
+  <h1 style="text-align:center;font-size:460%;">Official SITE</h1>
+  <p style="text-align:center;"class="oblique">We Offer the best you Need since 2017 motto “making online Messaging fast and easy”</p>
+<h1 style="text-align:center;font-size:100%;">Sign in now to check your notifications, join the conversation and catch up on posts from the people you follow. </h1>
+<br>
+</div>
+ <p style="font-size:260%;" align="center" > Meet Our Developers</p>
+ <br><br>
+<div class="container">
+  <div class="row">
+  <style>
+  .preview {
+  position: relative;
+  margin: auto;
+  width: 10%;
+  display:table;
+
+}
+.preview .inner {height: auto; overflow: hidden}
+.preview img {
+  display: block;
+}
+
+.preview p,h3 {
+  margin: 0;
+  color: #333;
+}
+
+ table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+td {
+  width: 33% ;
+  align:center;
+}
+  </style>
+    <table>
+      <th valign="top" >
+      <div class="preview">
+      <div class="inner">
+      <img src="manoj.jpg" alt="Manoj" width=250px height=250px>
+      <h3 style="background-color:black;color:white;">Manoj</h3>
+      <p class="oblique">Backend lead Architect, 3rd year CSE UnderGrad</p>
+      <p>Indian Institute of technology, Dharwad</p>
+      <p> Karnataka Pin-580011</p>
+      </div>
+      </div>
+    </th>
+    <th valign="top" >
+      <div class="preview">
+      <div class="inner">
+      <img src="vishnu.jpeg" alt="Vishnu " width=270px height=270px>
+      <h3 style="background-color:black;color:white;">Vishnu </h3>
+      <p class="oblique">Backend as well as frontend developer , 3rd Year CSE UnderGrad. </p>
+      <p>Indian Institute of technology, Dharwad</p>
+      <p> Karnataka Pin-580011</p>
+    </div>
+      </div>
+    </th>
+    <th valign="top" >
+      <div class="preview">
+      <div class="inner">
+      <img src="gaurav.jpg" alt="Gaurav" width=250px height=250px>
+      <h3 style="background-color:black;color:white;">Gaurav </h3>
+      <p class="oblique">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>GoldMan Sachs pvt Ltd</p>
+      <p>Karnataka Pin-580011</p>
+      </div>
+      </div>
+    </th>
+    </table>
+  </div>
+</div>
+
+<h6  align="center" style="font-size:260%;">REACH US OUT !<br><br>
+
+<!-- Add font awesome icons -->
+<a href="https://www.facebook.com/tapan.meena.311" class="fa fa-facebook"></a>
+<a href="https://twitter.com/tapanmeena3" class="fa fa-twitter"></a>
+<a href="https://plus.google.com/u/0/113006001537256986945" class="fa fa-google"></a>
+<a href="https://www.instagram.com/thunderdrooler/" class="fa fa-linkedin"></a>
+<a href="www.instagram.com/thunder_drooler" class="fa fa-instagram"></a>
+<br><br></h6>
+
+<p  align="center" >&copy; 2018 Chit-ChatBOX.com </p>
+<div id="contactForm">
+
+  <h1 class="hh1">Keep in touch!</h1>
+  <small>We'll get back to you as quickly as possible</small>
+
+  <form action="help.php" method="post">
+    <input type="hidden" name="dest" value="index.html">
+    <input type="hidden" name="user" value="guest"/>
+    <input placeholder="Name" type="text" name="name" required />
+    <input placeholder="Email" type="email" name="email" required />
+    <input placeholder="Subject" type="text" name="subject" required />
+    <textarea placeholder="Describe the issue" name="description" autocorrect="none" ></textarea>
+    <input class="formBtn" type="submit" />
+    <input class="formBtn" type="reset" />
+    <button  class="formBtn" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("contactForm").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>

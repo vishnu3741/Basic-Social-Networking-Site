@@ -1,0 +1,18 @@
+body
+{
+	font-family:helvetica;
+	width:100%;
+}
+h1
+{
+	padding:100px;
+	text-align:center;
+	font-size:35px;
+	margin-top:50px;
+	color:#0B173B;
+}
+
+.posts{
+	text-align:center;
+	padding: 50px;
+}

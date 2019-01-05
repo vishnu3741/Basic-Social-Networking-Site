@@ -1,0 +1,24 @@
+create table accounts (
+    email varchar(255) not null primary key,
+    name varchar(255) not null,
+    password varchar(255)
+);
+
+CREATE TABLE following (
+    name varchar(255) not null REFERENCES accounts(name),
+    follower_of varchar(255) not null REFERENCES accounts(name)
+);
+
+CREATE TABLE feed_messages (
+    sender_name varchar(255) REFERENCES accounts(name),
+    post text,
+    tags varchar(255) ARRAY[10],
+    time_stamp timestamp not null default now()
+);
+
+CREATE TABLE personal_messages (
+    sender_name varchar(255) REFERENCES accounts(name),
+    receiver_name varchar(255) REFERENCES accounts(name),
+    sent_msg text,
+    time_stamp timestamp not null default now()
+);

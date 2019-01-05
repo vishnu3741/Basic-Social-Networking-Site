@@ -1,0 +1,513 @@
+<?php session_start();
+?>
+<!DOCTYPE html>
+<html>
+<title>Admin Signin Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  text-align: center;
+  width:31%;
+  left:24%;
+  display:inline-block;
+
+
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: #A569BD  ;
+  font-size:20px;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: grey;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  font-size:20px;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    width:20%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.submit-button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    display:inline-block;
+}
+
+.submit-button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Raleway";
+* { box-sizing: border-box; }
+
+.hh1{ margin: 0; }
+#contact {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  margin: 4em auto;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#contact:hover { background: #666; }
+#contact:active { background: #444; }
+
+#contactForm {
+  display: none;
+  border: 6px solid salmon;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: Tomato;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+
+}
+input, textarea {
+  margin: .8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+
+  display: block;
+  width: 280px;
+  padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+.formBtn {
+  width: 140px;
+  display: inline-block;
+
+  background: teal;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+  line-height: 10px;
+}
+
+
+
+.signup-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signup-button:hover {
+    opacity:1;
+}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+.container input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.container input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 30%;
+    top: 0%;
+    width: 40%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+.login {
+	top: 10%;
+	height: 80%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+  h5 {
+    background-color: #80ced6;
+}
+.bg-image {
+
+  background: url("4.jpg");
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
+
+<body>
+<div class="bg-image"></div>
+<div class="w3-container" style="padding:0px;">
+
+<div class="w3-bar w3-border w3-light-grey">
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple "style=" height:43px;" onclick="" >Home</button>
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple"style=" height:43px;" onclick="window.location='banuser.html';" >Ban Users</button>
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple" style=" height:43px;" onclick="window.location='createadmin.html';" >Create Admin</button>
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple "style=" height:43px;" onclick="window.location='listuser.php';" >List Users</button>
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple "style=" height:43px;" onclick="window.location='accessRequest.php';" >Access Request</button>
+  <button class="w3-bar-item w3-button w3-grey w3-hover-purple "style=" height:43px;" onclick="window.location='log_out_admin.php';" >Logout</button>
+
+  <button class="w3-bar-item w3-button w3-grey w3-right w3-hover-purple "style=" height:43px;"  onclick="document.getElementById('updatepass').style.display='block'" >Update Password</button>
+  <input type="hidden" name="user" value="id">
+  <input type="hidden" name="table" value="adminvalues">
+
+</form>
+    <button class="w3-bar-item w3-button w3-right" >Hi Admin !</button>
+</div>
+</div>
+
+<style>
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 30%;
+    top: 30%;
+    width: 40%; /* Full width */
+    height: 30%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+
+.submit-popup
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #ff9933;
+    font-size: 14px;
+    text-align: center;
+    font-style: normal;
+    width: 50%;
+    border: 1px solid #e67300;
+    border-width: 1px 1px 3px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.submit-popup:hover
+{
+    background: #ffcc66;
+}
+
+</style>
+
+
+<div id="updatepass" class="modal">
+  <span onclick="document.getElementById('updatepass').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="changepassword.php" method="post">
+    <div class="container">
+      <h1>Update Password</h1>
+      <hr>
+      <label for="id"><b>User email</b></label>
+      <input type="text" placeholder="Enter User Name" name="id" required>
+
+      <label for="old-pass"><b>Old Password</b></label>
+      <input type="password" placeholder="Enter Old Password" name="oldpass" required>
+
+      <label for="new-pass"><b>New Password</b></label>
+      <input type="password" placeholder="Enter New Password" name="passwd" required>
+
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('updatepass').style.display='none'" class="signup-button cancelbtn">Cancel</button>
+        <button type="submit" class="signup-button signupbtn">Update Password</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<br>
+<br>
+<br>
+<br><br><br>
+<h1 style="color:Black; text-align:center; font-size:350%;" >Admin WorkSpace !</h1><br><br><br><br>
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<!--
+<form action="ListRestaurants"  method="post">
+
+<div class="custom-select"  >
+  <input type="hidden" name="d" value="admin">
+  <select id="myRestaurants" name="rest">
+
+
+        <%
+          List<String> localityList = Home.getLocalities();
+
+              for(int i=0;i<localityList.size();i++){
+              String s = localityList.get(i);
+              out.print("<option  value=\""+s+"\">"+s+"</option>");
+            //  System.out.println("<option name=\"rest\" value=\""+s+"\">"+s+"</option>");
+            }
+          %>
+  </select>
+</div>
+<input type="hidden" name="user" value="<%=a1%>">
+<input type="submit" class="submit-button submit-button2" name="submit" style="margin-left: 24%" value="Search Restaurants" />
+</form>
+-->
+
+<script>
+
+var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 0; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+
+</body>
+</html>

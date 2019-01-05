@@ -1,0 +1,57 @@
+.content {
+  height:auto;
+  margin-left: 300px;
+  padding-left: 20px;
+  position: relative;
+}
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:  #111;
+  overflow-x: hidden;
+}
+.button{
+  border: none;
+  color:  #818181;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+form.example button {
+  float: right;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+.button:hover{
+color: #f1f1f1;
+}
+@media screen{
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 22px;}
+}
